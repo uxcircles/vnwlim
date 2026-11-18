@@ -39,6 +39,7 @@ if __name__ == "__main__":
     save("instrument-serif", latin("Instrument+Serif"))
     save("familjen", latin("Familjen+Grotesk:wght@400..700"))
     save("dm-mono-500", latin("DM+Mono:wght@500"))
+    save("montserrat", latin("Montserrat:wght@300..500"))  # wordmark only, to sit with the VW logo
     # Traditional: /zh/ plus the Chinese column titles used on the English page and 404
     tc = chars("zh/*.html") + chars("index.html") + chars("404.html") + chars("privacy.html")
     sc = chars("sc/*.html")

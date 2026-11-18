@@ -1,6 +1,7 @@
 /* VNW Accountancy concept. Newsprint page: ink on cool paper, the VW logo's blue, column rules. */
 @font-face { font-family: "Instrument Serif"; src: url("../fonts/instrument-serif.woff2") format("woff2"); font-weight: 400; font-display: swap; }
 @font-face { font-family: "Familjen Grotesk"; src: url("../fonts/familjen.woff2") format("woff2"); font-weight: 400 700; font-display: swap; }
+@font-face { font-family: "Montserrat"; src: url("../fonts/montserrat.woff2") format("woff2"); font-weight: 300 500; font-display: swap; }
 @font-face { font-family: "DM Mono"; src: url("../fonts/dm-mono-500.woff2") format("woff2"); font-weight: 500; font-display: swap; }
 @font-face { font-family: "Noto Serif TC"; src: url("../fonts/noto-serif-tc-700.woff2") format("woff2"); font-weight: 700; font-display: swap; }
 @font-face { font-family: "Noto Sans TC"; src: url("../fonts/noto-sans-tc-400.woff2") format("woff2"); font-weight: 400; font-display: swap; }
@@ -66,7 +67,10 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .mast-in { max-width: var(--wrap); margin: 0 auto; padding: 0 24px; height: var(--head-h); display: flex; align-items: center; gap: 28px; }
 .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink); flex-shrink: 0; }
 .brand img { width: 52px; height: auto; }
-.brand-name { font: 400 26px/1 "Instrument Serif", serif; letter-spacing: -0.01em; }
+/* wordmark: light geometric caps + small caps, after the original "VNW Limited" logotype */
+.brand-name { font: 400 22px/1 "Montserrat", sans-serif; letter-spacing: .05em; color: #2b2f35; white-space: nowrap; }
+.brand-name .sc { display: inline-block; font-size: .74em; letter-spacing: .1em; text-transform: uppercase; }
+.brand-name .sc::first-letter { font-size: 1.35em; }
 .nav { display: flex; gap: 22px; margin-left: auto; }
 .nav a { color: var(--ink); text-decoration: none; font-size: 15px; font-weight: 500; padding: 10px 0; }
 .nav a:hover { color: var(--blue); text-decoration: underline; }
@@ -193,7 +197,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .foot a { color: #fff; }
 .foot-in { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 32px; }
 .foot img { filter: brightness(0) invert(1); width: 52px; }
-.foot-name { font: 400 26px/1 "Instrument Serif", serif; color: #fff; margin: 12px 0; }
+.foot-name { margin: 14px 0; }
+.foot-name .brand-name { color: #fff; }
 .lang-foot { border-color: #8b949c; display: inline-flex; }
 .lang-foot a { color: #fff; }
 .lang-foot a + a { border-color: #8b949c; }
@@ -237,7 +242,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .wrap, .mast-in { padding-left: 16px; padding-right: 16px; }
   .mast-in { gap: 10px; }
   .brand img { width: 40px; }
-  .brand-name { font-size: 21px; }
+  .brand-name { font-size: 18px; }
+  .mast .lang, .menu-btn { flex-shrink: 0; }
   .lang a { min-width: 32px; padding: 6px 4px; font-size: 13px; }
   .menu-btn { padding: 0 10px; font-size: 14px; }
   .d-row { grid-template-columns: 1fr auto; gap: 4px 12px; padding: 16px 0; }
@@ -256,7 +262,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .mbar a + a { border-left: 1px solid #3c444c; }
   body.menu-open .mbar { display: none; }
 }
-@media (max-width: 360px) {
-  .brand-name { font-size: 18px; }
-  .brand img { display: none; }
+@media (max-width: 440px) {
+  .brand-name { font-size: 19px; }
+  .brand-name .sc { display: none; }
 }

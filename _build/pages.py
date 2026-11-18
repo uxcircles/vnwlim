@@ -137,7 +137,7 @@ def header(lang, path, home=True):
     return f'''<header class="mast" id="top">
 <div class="mast-in">
 <a class="brand" href="./" aria-label="VNW Accountancy">
-<img src="{pre(lang)}assets/img/vw-mark.png" width="61" height="27" alt=""><span class="brand-name">VNW Accountancy</span></a>
+<img src="{pre(lang)}assets/img/vw-mark.png" width="61" height="27" alt=""><span class="brand-name" aria-hidden="true">VNW <span class="sc">Accountancy</span></span></a>
 <nav class="nav" id="nav" aria-label="{r(UI["menu"], lang)}">{nav}</nav>
 {lang_switch(lang, path)}
 <button class="menu-btn" aria-expanded="false" aria-controls="nav">{r(UI["menu"], lang)}</button>
@@ -149,7 +149,7 @@ def footer(lang, path):
     p = pre(lang)
     return f'''<footer class="foot">
 <div class="wrap foot-in">
-<div><img src="{p}assets/img/vw-mark.png" width="61" height="27" alt=""><p class="foot-name">VNW Accountancy</p>
+<div><img src="{p}assets/img/vw-mark.png" width="61" height="27" alt=""><p class="foot-name"><span class="brand-name">VNW <span class="sc">Accountancy</span></span></p>
 <p>{r(CONTACT["company"], lang)}</p></div>
 <div><p><a href="tel:{PHONE_TEL}">{PHONE_INTL}</a><br><a href="mailto:{EMAIL}">{EMAIL}</a><br>{r(CONTACT["wechat"], lang)}: {WECHAT}<br>
 <a href="{LINKEDIN}" target="_blank" rel="noopener">LinkedIn</a></p></div>
