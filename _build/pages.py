@@ -118,7 +118,7 @@ def concept(lang):
     tag = "Concept" if lang == "en" else "概念"
     return f'''<div class="concept" role="note"><div class="concept-in">
 <p><span class="concept-tag">{tag}</span><span class="concept-long">{r(UI["concept_long"], lang)}</span></p>
-<a class="concept-by" href="https://ux-circles.com/professionals" target="_blank" rel="noopener"><span class="concept-by-pre">{r(UI["concept_by"], lang)} </span><strong>UX CIRCLES</strong> ↗</a></div></div>'''
+<a class="concept-by" href="https://ux-circles.com/professionals" target="_blank" rel="noopener"><span class="concept-by-pre">{r(UI["concept_by"], lang)}</span><strong>UX CIRCLES</strong> ↗</a></div></div>'''
 
 
 def lang_switch(lang, path, cls="lang"):
@@ -156,7 +156,7 @@ def footer(lang, path):
 <div><p><a href="{p}{LANGS[lang][0]}privacy.html">{r(UI["privacy"], lang)}</a><br><a href="#top">{r(UI["top"], lang)}</a></p>
 {lang_switch(lang, path, "lang lang-foot")}</div>
 </div>
-<p class="wrap foot-note">{r(UI["concept_note"], lang)} <a href="https://ux-circles.com/professionals" target="_blank" rel="noopener">UX CIRCLES</a></p>
+<p class="wrap foot-note">{r(UI["concept_note"], lang)}<a href="https://ux-circles.com/professionals" target="_blank" rel="noopener">UX CIRCLES</a></p>
 </footer>
 <nav class="mbar" aria-label="{r(UI["call"], lang)}">
 <a href="tel:{PHONE_TEL}">{r(UI["call"], lang)}</a><a href="{WHATSAPP}" target="_blank" rel="noopener">WhatsApp</a><a href="mailto:{EMAIL}">{r(UI["email"], lang)}</a>
@@ -339,7 +339,8 @@ NOT_FOUND = '''<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><me
 <body class="nf">{concept}<main id="main" class="wrap nf-in"><p class="dateline"><span>VNW Accountancy</span><span>Page 404</span></p>
 <h1>This page isn't in today's edition</h1><p lang="zh-Hant" class="nf-zh">這一頁不在本期</p>
 <p>The address may have changed, like the old column links did.</p>
-<p><a class="btn btn-ink" href="/vnwlim/">Front page</a> <a class="btn" href="/vnwlim/zh/">中文主頁</a></p></main></body></html>
+<p><a class="btn btn-ink" href="/vnwlim/">Front page</a> <a class="btn" href="/vnwlim/zh/">中文主頁</a></p></main>
+<footer><p class="wrap foot-note">Unofficial redesign concept by <a href="https://ux-circles.com/professionals" target="_blank" rel="noopener">UX CIRCLES</a></p></footer></body></html>
 '''
 
 if __name__ == "__main__":
