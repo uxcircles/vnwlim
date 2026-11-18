@@ -48,10 +48,18 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .skip { position: absolute; left: 8px; top: -60px; background: var(--ink); color: #fff; padding: 10px 14px; z-index: 50; }
 .skip:focus { top: 8px; }
 
-/* concept bar */
-.concept { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center; justify-content: center; padding: 8px 16px; background: var(--ink); color: #dfe4e8; font-size: 13px; line-height: 1.4; text-align: center; }
-.concept a { color: #fff; }
-.concept-tag { border: 1px solid #8b949c; padding: 1px 7px; font: 500 11px/1.5 var(--mono); text-transform: uppercase; letter-spacing: .05em; }
+/* concept bar: one line on every screen, same pattern as the other UX CIRCLES concepts */
+.concept { background: var(--ink); color: #c4ccd3; font-size: 13px; line-height: 1.4; }
+.concept-in { max-width: var(--wrap); margin: 0 auto; padding: 0 24px; height: 36px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.concept-in p { display: flex; align-items: center; gap: 10px; margin: 0; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.concept-tag { flex-shrink: 0; background: var(--blue); color: #fff; font: 500 11px/1.4 var(--mono); text-transform: uppercase; letter-spacing: .08em; padding: 3px 7px 2px; }
+.concept-long { overflow: hidden; text-overflow: ellipsis; }
+.concept-long a { color: inherit; text-underline-offset: 3px; }
+.concept-by { flex-shrink: 0; color: #fff; text-decoration: none; white-space: nowrap; }
+.concept-by strong { font-weight: 600; letter-spacing: .05em; }
+.concept-by:hover { color: #8fc0ea; }
+@media (max-width: 760px) { .concept-long { display: none; } }
+@media (max-width: 640px) { .concept-in { padding: 0 16px; } }
 
 /* masthead */
 .mast { position: sticky; top: 0; z-index: 20; background: var(--paper); border-bottom: 3px double var(--ink); }

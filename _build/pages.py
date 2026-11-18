@@ -115,9 +115,10 @@ def head(lang, title, desc, path):
 
 
 def concept(lang):
-    return f'''<div class="concept" role="note"><span class="concept-tag">Concept / 概念</span>
-<span>{r(UI["concept_long"], lang)}</span>
-<a class="concept-by" href="https://ux-circles.com/professionals" target="_blank" rel="noopener">{r(UI["concept_by"], lang)} UX CIRCLES ↗</a></div>'''
+    tag = "Concept" if lang == "en" else "概念"
+    return f'''<div class="concept" role="note"><div class="concept-in">
+<p><span class="concept-tag">{tag}</span><span class="concept-long">{r(UI["concept_long"], lang)}</span></p>
+<a class="concept-by" href="https://ux-circles.com/professionals" target="_blank" rel="noopener"><span class="concept-by-pre">{r(UI["concept_by"], lang)} </span><strong>UX CIRCLES</strong> ↗</a></div></div>'''
 
 
 def lang_switch(lang, path, cls="lang"):
@@ -335,7 +336,7 @@ def write(rel, html):
 NOT_FOUND = '''<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow"><title>Not in this edition | VNW Accountancy</title>
 <link rel="icon" href="/vnwlim/assets/img/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/vnwlim/assets/css/site.css?v={v}"></head>
-<body class="nf"><main id="main" class="wrap nf-in"><p class="dateline"><span>VNW Accountancy</span><span>Page 404</span></p>
+<body class="nf">{concept}<main id="main" class="wrap nf-in"><p class="dateline"><span>VNW Accountancy</span><span>Page 404</span></p>
 <h1>This page isn't in today's edition</h1><p lang="zh-Hant" class="nf-zh">這一頁不在本期</p>
 <p>The address may have changed, like the old column links did.</p>
 <p><a class="btn btn-ink" href="/vnwlim/">Front page</a> <a class="btn" href="/vnwlim/zh/">中文主頁</a></p></main></body></html>
@@ -351,5 +352,5 @@ if __name__ == "__main__":
     for lang, (d, _, _) in LANGS.items():
         write(d + "index.html", page(lang, "", titles[lang], descs[lang], home(lang, today), today))
         write(d + "privacy.html", page(lang, "privacy.html", r(PRIVACY["title"], lang) + " | VNW Accountancy", descs[lang], privacy(lang), today, False))
-    write("404.html", NOT_FOUND.replace("{v}", ver("assets/css/site.css")))
+    write("404.html", NOT_FOUND.replace("{v}", ver("assets/css/site.css")).replace("{concept}", concept("en")))
     open(os.path.join(ROOT, "robots.txt"), "w").write("User-agent: *\nDisallow: /\n")
