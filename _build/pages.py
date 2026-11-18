@@ -94,7 +94,7 @@ def head(lang, title, desc, path):
     p = pre(lang)
     alts = "\n".join(f'<link rel="alternate" hreflang="{LANGS[l][1]}" href="{BASE}{LANGS[l][0]}{path}">' for l in LANGS)
     css = f"{p}assets/css/site.css?v={ver('assets/css/site.css')}"
-    fonts = ['instrument-serif', 'familjen']
+    fonts = ['spectral-500', 'familjen']
     if lang != "en":
         fonts.append(f"noto-serif-{'tc' if lang == 'zh' else 'sc'}-700")
     preload = "\n".join(f'<link rel="preload" href="{p}assets/fonts/{f}.woff2" as="font" type="font/woff2" crossorigin>' for f in fonts)

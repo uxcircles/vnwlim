@@ -1,5 +1,5 @@
 """Self-host fonts as WOFF2. Run after changing Chinese text:  python3 _build/pages.py && python3 _build/fonts.py
-Latin: Instrument Serif 400, Familjen Grotesk 400-700, DM Mono 500 (Google's latin subset).
+Latin: Spectral 400/500, Familjen Grotesk 400-700, DM Mono 500 (Google's latin subset).
 Chinese: Noto Serif/Sans TC (from /zh/) and SC (from /sc/), subset to the characters used, via Google Fonts text=."""
 import glob, html, os, re, urllib.parse, urllib.request
 
@@ -36,7 +36,8 @@ def chars(pattern):
 
 
 if __name__ == "__main__":
-    save("instrument-serif", latin("Instrument+Serif"))
+    save("spectral-400", latin("Spectral:wght@400"))
+    save("spectral-500", latin("Spectral:wght@500"))
     save("familjen", latin("Familjen+Grotesk:wght@400..700"))
     save("dm-mono-500", latin("DM+Mono:wght@500"))
     save("montserrat", latin("Montserrat:wght@300..500"))  # wordmark only, to sit with the VW logo

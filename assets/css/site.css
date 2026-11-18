@@ -1,5 +1,6 @@
 /* VNW Accountancy concept. Newsprint page: ink on cool paper, the VW logo's blue, column rules. */
-@font-face { font-family: "Instrument Serif"; src: url("../fonts/instrument-serif.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Spectral"; src: url("../fonts/spectral-400.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Spectral"; src: url("../fonts/spectral-500.woff2") format("woff2"); font-weight: 500; font-display: swap; }
 @font-face { font-family: "Familjen Grotesk"; src: url("../fonts/familjen.woff2") format("woff2"); font-weight: 400 700; font-display: swap; }
 @font-face { font-family: "Montserrat"; src: url("../fonts/montserrat.woff2") format("woff2"); font-weight: 300 500; font-display: swap; }
 @font-face { font-family: "DM Mono"; src: url("../fonts/dm-mono-500.woff2") format("woff2"); font-weight: 500; font-display: swap; }
@@ -19,14 +20,14 @@
   --blue: #1f66a3;
   --blue-deep: #134a78;
   --white: #ffffff;
-  --display: "Instrument Serif", "Noto Serif TC", Georgia, serif;
+  --display: "Spectral", "Noto Serif TC", Georgia, serif;
   --text: "Familjen Grotesk", "Noto Sans TC", system-ui, sans-serif;
   --mono: "DM Mono", ui-monospace, monospace;
   --wrap: 1240px;
   --head-h: 64px;
 }
-:lang(zh-Hans) { --display: "Instrument Serif", "Noto Serif SC", serif; --text: "Familjen Grotesk", "Noto Sans SC", system-ui, sans-serif; }
-[lang="zh-Hant"] { --display: "Instrument Serif", "Noto Serif TC", serif; --text: "Familjen Grotesk", "Noto Sans TC", system-ui, sans-serif; }
+:lang(zh-Hans) { --display: "Spectral", "Noto Serif SC", serif; --text: "Familjen Grotesk", "Noto Sans SC", system-ui, sans-serif; }
+[lang="zh-Hant"] { --display: "Spectral", "Noto Serif TC", serif; --text: "Familjen Grotesk", "Noto Sans TC", system-ui, sans-serif; }
 
 *, *::before, *::after { box-sizing: border-box; }
 html, body { overflow-x: clip; }
@@ -38,7 +39,7 @@ a { color: var(--blue-deep); text-underline-offset: 3px; }
 a:hover { color: var(--blue); }
 :focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
 h1, h2, h3 { margin: 0; font-weight: 400; text-wrap: balance; }
-h2 { font: 400 clamp(34px, 4.4vw, 56px)/1.05 var(--display); letter-spacing: -0.01em; }
+h2 { font: 500 clamp(30px, 3.8vw, 48px)/1.1 var(--display); letter-spacing: -0.015em; }
 h3 { font: 700 17px/1.35 var(--text); }
 :lang(zh) h1, :lang(zh) h2 { font-weight: 700; letter-spacing: 0; line-height: 1.2; }
 p { margin: 0 0 1em; }
@@ -84,7 +85,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .hero { padding: 28px 0 56px; }
 .dateline { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 18px; border-bottom: 1px solid var(--ink); padding-bottom: 8px; margin: 0 0 28px; font: 500 12.5px/1.4 var(--mono); text-transform: uppercase; letter-spacing: .04em; color: var(--ink-2); }
 :lang(zh) .dateline { text-transform: none; }
-.hero h1 { font: 400 clamp(46px, 8.6vw, 128px)/0.94 var(--display); letter-spacing: -0.025em; max-width: 11ch; }
+.hero h1 { font: 500 clamp(42px, 7vw, 100px)/1.02 var(--display); letter-spacing: -0.02em; max-width: 12ch; }
 :lang(zh) .hero h1 { font-size: clamp(30px, 8.6vw, 84px); line-height: 1.12; max-width: 12em; letter-spacing: 0.01em; }
 .hero-top { display: grid; grid-template-columns: 1.55fr 1fr; gap: 48px; align-items: end; margin-bottom: 48px; }
 .lede { max-width: 62ch; font-size: clamp(17px, 1.5vw, 19px); color: var(--ink-2); margin: 0 0 8px; border-left: 1px solid var(--rule); padding-left: 24px; }
@@ -97,7 +98,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .d-mon { font-size: 15px; text-transform: uppercase; letter-spacing: .04em; color: var(--ink-2); }
 .d-count { font: 500 15px/1.3 var(--mono); color: var(--blue-deep); }
 .d-row:first-child .d-count { background: var(--blue); color: #fff; padding: 3px 8px; justify-self: start; }
-.d-text h3 { font: 400 clamp(22px, 2.2vw, 28px)/1.2 var(--display); }
+.d-text h3 { font: 500 clamp(20px, 2vw, 25px)/1.25 var(--display); }
 :lang(zh) .d-text h3 { font-weight: 700; font-size: clamp(19px, 1.9vw, 23px); }
 .d-text p { margin: 6px 0 0; color: var(--ink-2); max-width: 62ch; }
 .d-more { margin-top: 18px; }
@@ -108,7 +109,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .d-list-sm .d-row:first-child .d-count { background: none; color: var(--blue-deep); padding: 0; }
 .d-paye { margin: 22px 0 0; padding: 14px 18px; background: var(--paper-2); border-left: 4px solid var(--blue); }
 .hero-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 32px; }
-.cta-label { margin: 0 12px 0 0; font: 400 26px/1.1 var(--display); }
+.cta-label { margin: 0 12px 0 0; font: 500 23px/1.2 var(--display); }
 :lang(zh) .cta-label { font-weight: 700; font-size: 21px; }
 .d-note { font-size: 13.5px; color: var(--ink-2); margin-top: 18px; }
 .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 22px; border: 2px solid var(--ink); background: transparent; color: var(--ink); font: 600 16px var(--text); text-decoration: none; cursor: pointer; }
@@ -127,7 +128,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .co .small { color: #aab3bb; }
 .co-out { border-top: 3px solid #fff; }
 .co-out li { display: grid; grid-template-columns: 1fr auto; gap: 2px 20px; padding: 16px 0; border-bottom: 1px solid #3c444c; }
-.co-out strong { font: 400 24px/1.2 var(--display); color: #fff; }
+.co-out strong { font: 500 21px/1.25 var(--display); color: #fff; }
 :lang(zh) .co-out strong { font-weight: 700; font-size: 19px; }
 .co-out .when { font: 500 18px/1.3 var(--mono); color: #fff; text-align: right; }
 .co-out .in { font: 500 13px var(--mono); color: #8fc0ea; text-align: right; }
@@ -139,10 +140,10 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .svc-grid { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 28px; border-top: 3px solid var(--ink); }
 .svc-col { padding: 18px 22px 8px; border-left: 1px solid var(--rule); }
 .svc-col:first-child { border-left: 0; padding-left: 0; }
-.svc-col h3 { font: 400 28px/1.1 var(--display); margin-bottom: 10px; }
+.svc-col h3 { font: 500 25px/1.15 var(--display); margin-bottom: 10px; }
 :lang(zh) .svc-col h3 { font-weight: 700; font-size: 22px; }
 .svc-col li { padding: 7px 0; border-bottom: 1px dotted var(--rule); }
-.svc-new { margin-top: 28px; font: 400 clamp(22px, 2.4vw, 30px)/1.25 var(--display); max-width: 40ch; }
+.svc-new { margin-top: 28px; font: 400 clamp(20px, 2.1vw, 26px)/1.35 var(--display); max-width: 44ch; }
 :lang(zh) .svc-new { font-weight: 700; font-size: clamp(18px, 2vw, 22px); line-height: 1.5; }
 
 .ways { padding: 8px 0 72px; }
@@ -174,7 +175,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .c-item time { font: 500 12.5px var(--mono); text-transform: uppercase; letter-spacing: .05em; color: var(--blue-deep); }
 .c-item h3 { font: 700 21px/1.35 "Noto Serif TC", serif; margin: 4px 0 6px; }
 :lang(zh-Hans) .c-item h3 { font-family: "Noto Serif SC", serif; }
-.c-en { display: block; font: 400 21px/1.2 var(--display); margin-top: 2px; }
+.c-en { display: block; font: 500 18px/1.3 var(--display); margin-top: 2px; }
 .c-item p { color: var(--ink-2); font-size: 15.5px; margin-bottom: 8px; }
 .c-flag { background: #fff4d6; border-left: 3px solid #b07b00; padding: 8px 10px; color: var(--ink) !important; font-size: 14px !important; }
 .c-ask { font-size: 14.5px; font-weight: 600; display: inline-flex; min-height: 44px; align-items: center; }
@@ -208,10 +209,10 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 
 /* privacy and 404 */
 .page { padding: 56px 0 80px; }
-.page h1 { font: 400 clamp(40px, 6vw, 72px)/1 var(--display); margin-bottom: 20px; }
+.page h1 { font: 500 clamp(36px, 5vw, 60px)/1.05 var(--display); margin-bottom: 20px; }
 .page h2 { font-size: 30px; margin: 32px 0 8px; }
 .nf-in { padding: 48px 24px; }
-.nf h1 { font: 400 clamp(44px, 8vw, 104px)/0.95 var(--display); max-width: 12ch; margin: 24px 0 12px; }
+.nf h1 { font: 500 clamp(40px, 6.5vw, 84px)/1.02 var(--display); max-width: 13ch; margin: 24px 0 12px; }
 .nf-zh { font: 700 28px "Noto Serif TC", serif; }
 
 @media (max-width: 1080px) {

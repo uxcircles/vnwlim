@@ -26,7 +26,7 @@ python3 _build/fonts.py      # 中文字改了之後，重新擷取字型子集
 
 - **標誌元素：** 林先生在《英國僑報》寫了十五期的稅務專欄。整個網站排成一份報紙：雙線報頭、日期行（dateline）、欄線、專欄目錄，連 404 頁都是「不在本期」。VW 標誌的藍色勾用於報頭、favicon 及頁尾。
 - **首屏類型：** `calendar-led`。首屏是即時計算的稅局限期（下一個 1 月 31 日還有幾天），配合「你公司自己的限期」工具（輸入年結日，算出公司稅、CT600、公司註冊處報表及增值稅限期）。會計師客戶最常問「幾時要交」，所以首屏直接回答。
-- **字型：** 品牌字用 Montserrat Light 加小型大寫（呼應原有「VNW Limited」標誌字，與藍色 VW 勾配合；手機上只顯示「VNW」）；Instrument Serif（報紙標題）、Familjen Grotesk（內文）、DM Mono（日期與數字，像日曆和賬簿）；中文用 Noto Serif / Sans TC 及 SC，按使用字元子集化。
+- **字型：** 品牌字用 Montserrat Light 加小型大寫（呼應原有「VNW Limited」標誌字，與藍色 VW 勾配合；手機上只顯示「VNW」）；Spectral（報紙標題，取代原本較窄的 Instrument Serif）、Familjen Grotesk（內文）、DM Mono（日期與數字，像日曆和賬簿）；中文用 Noto Serif / Sans TC 及 SC，按使用字元子集化。
 - **顏色：** 冷白紙色 `#f5f6f4`、油墨黑 `#1a1e23`、VW 標誌藍 `#1f66a3`（取自現有標誌）。刻意不用米色加深藍。
 - **標題：** The tax year, one date at a time ／ 英國稅務年度，每個限期都替你記住
 - **與同行業前幾個網站的分別：** KY、Tan & Co、IQTi、William Lai 都是左文右圖（拱形相片或資料卡）。這裡沒有拱形、沒有浮動標籤、沒有數字統計列，首屏是一份日期表，不是圖片。
